@@ -1,3 +1,4 @@
 *.txt
 *.exe
+./src/*.rom
 sjasmpg_mac_esp
