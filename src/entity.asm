@@ -1740,9 +1740,9 @@ TRATE_HEART
     LD    A, [MWORK.PLAYER_LIVES]
     ADD   2
     LD    [MWORK.PLAYER_LIVES], A
-    CP    6
+    CP    10
     JP    C, .QUIT
-    LD    A, 6
+    LD    A, 10
     LD    [MWORK.PLAYER_LIVES], A
 .QUIT
     LD    [IX], 0

@@ -727,7 +727,7 @@ SELECT_GAME_PATTERNS            INCBIN          "selectgame.til"
 SELECT_GAME_COLORS              INCBIN          "selectgame.col"
 
 SONG_2_LEVEL
-  incbin "rescue2N1v2.mus"
+  incbin "rescue2N1.mus"
 SONG_3_LEVEL
   incbin "rescue3N1.mus"  
 SONG_GAME_OVER

@@ -44,7 +44,7 @@ TABLA_SONG
     DW MDATA.SONG_GAME_OVER
     DW MDATA.SONG_INTRO
 SONG_1_LEVEL
- incbin "rescue1N1.mus"      
+ incbin "rescue1N1v2.mus"      
  ;incbin "game_overN1.mus"
  
 
