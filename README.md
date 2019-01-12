@@ -1,5 +1,7 @@
 # Virus LQP-79 (MSX)
-Port to MSX of the Arduboy game [VirusLQP-79](https://github.com/TEAMarg/ID-40-VIRUS-LQP-79) of Team Arg.
+*Port to MSX of the Arduboy game [VirusLQP-79](https://github.com/TEAMarg/ID-40-VIRUS-LQP-79) of Team Arg.*
+
+Last release [download](viruslqp79_msx/rom/lqp79.rom)
 
 ![](docs/graphics/tiles/intro_menu/intro.png?raw=true)
 
@@ -21,6 +23,10 @@ Pause the game with F1.
 ![](docs/graphics/tiles/intro_menu/sc1.png?raw=true)
 
 ![](docs/graphics/tiles/intro_menu/sc2.png?raw=true)
+
+## Where to Play
+With a MSX computer. 
+With an emulator like [BlueMSX](http://bluemsx.msxblue.com/download.html), [openMSX](https://openmsx.org/) or online [FileHunter](https://www.file-hunter.com/MSX/). 
 
 ## Credits
 Arduboy Version: Team Arg (Fuopy, JO3RY, Justin Cyr and Castpixel).
