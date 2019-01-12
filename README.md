@@ -1,6 +1,9 @@
 # Virus LQP-79 (MSX)
 Port to MSX of the Arduboy game [VirusLQP-79](https://github.com/TEAMarg/ID-40-VIRUS-LQP-79) of Team Arg.
 
+![](docs/graphics/tiles/intro_menu/intro.png?raw=true)
+
+
 ## Story
 "*Amy lived her happy life in a pretty normal town … until that fateful accident at the nearby research facility. Officials denied the incident at first, until the entire facility was abandoned. Neighbours started acting weird. Amy didn’t feel safe anymore. While trying to leave town, she found herself running from a hoard of zombies. What Amy didn't expect, was to find other survivors. Help her escape and rescue the ones not infected by the LQP-79 virus. Hurry!*"
 
@@ -15,6 +18,9 @@ Walk the 32 levels and if Amy is agile enough, you will save people of the epide
 
 Pause the game with F1.
 
+![](docs/graphics/tiles/intro_menu/sc1.png?raw=true)
+
+![](docs/graphics/tiles/intro_menu/sc2.png?raw=true)
 
 ## Credits
 Arduboy Version: Team Arg (Fuopy, JO3RY, Justin Cyr and Castpixel).
