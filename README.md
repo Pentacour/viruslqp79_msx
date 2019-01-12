@@ -25,8 +25,8 @@ Pause the game with F1.
 ![](docs/graphics/tiles/intro_menu/sc2.png?raw=true)
 
 ## Where to Play
-With a MSX computer. 
-With an emulator like [BlueMSX](http://bluemsx.msxblue.com/download.html), [openMSX](https://openmsx.org/) or online [FileHunter](https://www.file-hunter.com/MSX/). 
+- With an MSX computer. 
+- With an emulator like [BlueMSX](http://bluemsx.msxblue.com/download.html), [openMSX](https://openmsx.org/) or online [FileHunter](https://www.file-hunter.com/MSX/). 
 
 ## Credits
 Arduboy Version: Team Arg (Fuopy, JO3RY, Justin Cyr and Castpixel).
