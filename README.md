@@ -1,7 +1,7 @@
 # Virus LQP-79 (MSX)
 *Port to MSX of the Arduboy game [VirusLQP-79](https://github.com/TEAMarg/ID-40-VIRUS-LQP-79) of Team Arg.*
 
-Last release [download](viruslqp79_msx/rom/lqp79.rom)
+Last release [download](releases/download/v1.1/lqp79.rom)
 
 ![](docs/graphics/tiles/intro_menu/intro.png?raw=true)
 
