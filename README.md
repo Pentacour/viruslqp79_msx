@@ -28,8 +28,27 @@ Pause the game with F1.
 ![](docs/graphics/tiles/intro_menu/sc2.png?raw=true)
 
 ## Where to Play
+Downloading the .ROM file and:
+
 - With an MSX computer. 
 - With an emulator like [BlueMSX](http://bluemsx.msxblue.com/download.html), [openMSX](https://openmsx.org/) or online [FileHunter](https://www.file-hunter.com/MSX/). 
+
+## How to assemble
+
+First I used XL2S [Sjasm assembler](http://www.xl2s.tk/) and then I moved to Pipagerardo [sjasmpg](https://github.com/pipagerardo/sjasmpg). I think the two assemblers can be used.
+
+Download the executable sjasm or sjasmpg. Download Virus LQP-79 code and into src directory execute:
+
+**Windows**
+sjasmpg_win_eng.exe main.asm
+
+**macOS**
+./sjasmpg_mac_eng main.asm
+
+**Linux**
+./sjasmpg_linux_eng main.asm
+
+An lqp79.rom file will be created.
 
 ## Credits
 Arduboy Version: Team Arg (Fuopy, JO3RY, Justin Cyr and Castpixel).
