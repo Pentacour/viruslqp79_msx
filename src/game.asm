@@ -6,15 +6,14 @@ K_MAX_CONTINUES_FOR_GOOD_ENDING EQU 3
 ;::SHOW_INTRO
 ;===========================================
 SHOW_INTRO
-               CALL            LOAD_INTRO
-               
-               CALL    PLAYER_OFF
-               LD      A, K_SONG_INTRO
-               CALL    CARGA_CANCION
+                CALL            LOAD_INTRO
 
- 
-
-                ;CALL    MSUPPORT.INIT_SPRITES_SIZE
+                CALL            PLAYER_OFF
+                DI
+                PUSH            AF
+                LD              A, K_SONG_INTRO
+                CALL            CARGA_CANCION
+                POP             AF
 
                 LD              HL, 0XF000
                 LD              [MWORK.TMP_COUNTER], HL
@@ -247,85 +246,6 @@ PLAY_START_LINE_TEXT
 BLANK_TEXT
                 DB    16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 
-;==================================
-;::SHOW_STAFF
-;==================================
-/*SHOW_STAFF
-                XOR             A
-                LD              DE, MWORK.CAMERA_SCREEN+32*13
-                LD              BC, 7*32
-.LOOP_CLEAR
-                LD              [DE], A
-                INC             DE
-                DJNZ            .LOOP_CLEAR
-
-                LD              HL, CODE_TEXT
-                LD              DE, MWORK.CAMERA_SCREEN+32*13+8+4
-                LD              BC, 9
-                LDIR
-                LD              HL, ART_TEXT_1
-                LD              DE, MWORK.CAMERA_SCREEN+32*14+8+4
-                LD              BC, 9
-                LDIR
-                LD              HL, ART_TEXT_2
-                LD              DE, MWORK.CAMERA_SCREEN+32*15+8+7
-                LD              BC, 6
-                LDIR
-                LD              HL, ART_TEXT_3
-                LD              DE, MWORK.CAMERA_SCREEN+32*16+8+7
-                LD              BC, 4
-                LDIR
-                LD              HL, ART_TEXT_4
-                LD              DE, MWORK.CAMERA_SCREEN+32*17+8+7
-                LD              BC, 5
-                LDIR
-                LD              HL, ART_TEXT_5
-                LD              DE, MWORK.CAMERA_SCREEN+32*18+8+7
-                LD              BC, 8
-                LDIR
-                LD              HL, MUSIC_TEXT
-                LD              DE, MWORK.CAMERA_SCREEN+32*19+8+3
-                LD              BC, 9
-                LDIR
-
-                HALT
-                LD              HL, MWORK.CAMERA_SCREEN
-                LD              DE, NAMTBL
-                LD              B, 48
-                CALL            MSUPPORT.UFLDIRVM
-
-                LD              B, 40
-.MICRO_WAIT
-                HALT
-                DJNZ            .MICRO_WAIT
-
-                LD              HL, 0XE000
-                LD              [MWORK.TMP_COUNTER], HL
-.PRESS_KEY_LOOP
-                LD              HL, [MWORK.TMP_COUNTER]
-                DEC             HL
-                LD              [MWORK.TMP_COUNTER], HL
-                LD              A, L
-                CP              0
-                JP              NZ, .CONTINUE
-                LD              A, H
-                CP              0
-                JP              Z, SHOW_INTRO
-.CONTINUE
-                XOR             A
-                CALL            GTTRIG
-                CP              0
-                JP              Z, .PRESS_KEY_LOOP
-                JP              MAIN_SEL_GAME
-
-CODE_TEXT       DB 19, 20, 23, 24, 25, 26, 27, 28, 29
-ART_TEXT_1      DB 21, 22, 23, 24, 30, 31, 32, 33, 34
-ART_TEXT_2      DB 24, 35, 36, 37, 38, 39
-ART_TEXT_3      DB 24, 40, 41, 42
-ART_TEXT_4      DB 24, 118, 119, 120, 121
-ART_TEXT_5      DB 24, 43, 44, 45, 46, 47, 48, 42
-MUSIC_TEXT      DB 149, 150, 151, 23, 24, 122, 123, 124, 125
-*/
 
 ;================================
 ;::COOL_CLEAR_SCREEN

@@ -20,6 +20,9 @@ INIT_MUSIC
     LD      HL,MWORK.BUFF_CANAL_P
     LD      [CANAL_P],HL
 
+    XOR     A    
+    LD      [INTERR],A
+
     CALL    INICIO
     LD      HL,INICIO
     LD      [HOOK+1],HL
