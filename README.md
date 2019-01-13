@@ -52,13 +52,21 @@ An lqp79.rom file will be created.
 
 ## Credits
 Arduboy Version: Team Arg (Fuopy, JO3RY, Justin Cyr and Castpixel).
+
 Sprites (Amy, green zombies and survivors): Justin Cyr.
+
 Sprites (Blue zombies): Yahring.
+
 Tiles (Arduboy): JO3RY.
+
 Tiles (MSX port): xmangel.
+
 Splash Screen: Colored and enhanced for MSX by xmangel.
+
 Rest screen, Half mission screen and ending screens: Yahring.
+
 Soundtrack: Bitcaffe.
+
 Coded in assembler for MSX: Pentacour.
 
 ## Tools & Thanks
