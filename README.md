@@ -1,11 +1,12 @@
 # Virus LQP-79 (MSX)
+
+![](docs/graphics/tiles/intro_menu/intro.png?raw=true)
+
 *Port to MSX of the Arduboy game [VirusLQP-79](https://github.com/TEAMarg/ID-40-VIRUS-LQP-79) of Team Arg.*
 
 *Submited to [MSXDev18 contest](https://www.msxdev.org/2018/05/10/msxdev18-3rd-entry-virus-lqp-79/)*
 
 Latest release [download](https://github.com/Pentacour/viruslqp79_msx/releases/tag/v1.1)
-
-![](docs/graphics/tiles/intro_menu/intro.png?raw=true)
 
 
 ## Story
