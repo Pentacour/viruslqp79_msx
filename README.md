@@ -70,11 +70,17 @@ An lqp79.rom file will be created.
 **Coded in assembler for MSX:** Pentacour.
 
 ## Tools & Thanks
-Sjasm (Sjoerd Mastjin) and SjasmPG (PipaGerardo).
-OpenMSX and BlueMSX.
-WYZ Player and WYZ Tracker.
-nMSXTiles.
-Pletter.
+[Sjasm assembler](http://www.xl2s.tk/)(Sjoerd Mastjin) and [sjasmpg] (PipaGerardo).
+
+[BlueMSX](http://bluemsx.msxblue.com/download.html)
+
+[openMSX](https://openmsx.org/)
+
+WYZ Player and WYZ Tracker [web](https://sites.google.com/site/wyzplayer/)
+
+[nMSXTiles](https://github.com/pipagerardo/nMSXtiles)
+
+[Pletter](http://www.xl2s.tk/)
 
 Thanks to the knowledge database of Karoshi forums and MRC.
 
