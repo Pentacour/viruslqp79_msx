@@ -51,23 +51,23 @@ sjasmpg_win_eng.exe main.asm
 An lqp79.rom file will be created.
 
 ## Credits
-Arduboy Version: Team Arg (Fuopy, JO3RY, Justin Cyr and Castpixel).
+**Arduboy Version:** Team Arg (Fuopy, JO3RY, Justin Cyr and Castpixel).
 
-Sprites (Amy, green zombies and survivors): Justin Cyr.
+**Sprites (Amy, green zombies and survivors):** Justin Cyr.
 
-Sprites (Blue zombies): Yahring.
+**Sprites (Blue zombies):** Yahring.
 
-Tiles (Arduboy): JO3RY.
+**Tiles (Arduboy):** JO3RY.
 
-Tiles (MSX port): xmangel.
+**Tiles (MSX port):** xmangel.
 
-Splash Screen: Colored and enhanced for MSX by xmangel.
+**Splash Screen:** Colored and enhanced for MSX by xmangel.
 
-Rest screen, Half mission screen and ending screens: Yahring.
+**Rest screen, Half mission screen and ending screens:** Yahring.
 
-Soundtrack: Bitcaffe.
+**Soundtrack:** Bitcaffe.
 
-Coded in assembler for MSX: Pentacour.
+**Coded in assembler for MSX:** Pentacour.
 
 ## Tools & Thanks
 Sjasm (Sjoerd Mastjin) and SjasmPG (PipaGerardo).
