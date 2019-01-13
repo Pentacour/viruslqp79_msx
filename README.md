@@ -76,7 +76,7 @@ An lqp79.rom file will be created.
 
 [openMSX](https://openmsx.org/)
 
-WYZ Player and WYZ Tracker [web](https://sites.google.com/site/wyzplayer/)
+[WYZ Player and WYZ Tracker](https://sites.google.com/site/wyzplayer/)
 
 [nMSXTiles](https://github.com/pipagerardo/nMSXtiles)
 
