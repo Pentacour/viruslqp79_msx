@@ -3,6 +3,8 @@
 
 Latest release [download](https://github.com/Pentacour/viruslqp79_msx/releases/tag/v1.1)
 
+Submited to [MSXDev18 contest](https://www.msxdev.org/2018/05/10/msxdev18-3rd-entry-virus-lqp-79/)
+
 ![](docs/graphics/tiles/intro_menu/intro.png?raw=true)
 
 
