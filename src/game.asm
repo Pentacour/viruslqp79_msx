@@ -1,6 +1,6 @@
                 MODULE          MGAME
 
-K_MAX_CONTINUES_FOR_GOOD_ENDING EQU 3   
+K_MAX_CONTINUES_FOR_GOOD_ENDING EQU 3
 
 ;===========================================
 ;::SHOW_INTRO
@@ -43,7 +43,7 @@ LOAD_INTRO
                 CALL            DISSCR
 
                 CALL            SETGAMEPAGE0
-                LD              HL, MDATAP0.INTRO_PATTERNS_0 
+                LD              HL, MDATAP0.INTRO_PATTERNS_0
                 LD              DE, MWORK.TMP_UNZIP
                 CALL            PLETTER.UNPACK
                 CALL            RESTOREBIOS
@@ -63,7 +63,7 @@ LOAD_INTRO
                 CALL            LDIRVM
 
                 CALL            SETGAMEPAGE0
-                LD              HL, MDATAP0.INTRO_PATTERNS_1 
+                LD              HL, MDATAP0.INTRO_PATTERNS_1
                 LD              DE, MWORK.TMP_UNZIP
                 CALL            PLETTER.UNPACK
                 CALL            RESTOREBIOS
@@ -83,7 +83,7 @@ LOAD_INTRO
                 CALL            LDIRVM
 
                 CALL            SETGAMEPAGE0
-                LD              HL, MDATAP0.INTRO_PATTERNS_2 
+                LD              HL, MDATAP0.INTRO_PATTERNS_2
                 LD              DE, MWORK.TMP_UNZIP
                 CALL            PLETTER.UNPACK
                 CALL            RESTOREBIOS
@@ -107,7 +107,7 @@ LOAD_INTRO
 
                 RET
 
-                
+
 
 ;===========================================
 ;::SHOW_SELECT_GAME
@@ -118,7 +118,7 @@ SHOW_SELECT_GAME
                 LD              HL, MDATA.SELECT_GAME_PATTERNS
                 LD              DE, MDATA.SELECT_GAME_COLORS
                 CALL            MSUPPORT.LOAD_TILESET_ONE_BANK
-                CALL            ENASCR    
+                CALL            ENASCR
 
                 LD              HL, MWORK.CAMERA_SCREEN+32*4+7
                 LD              A, 64
@@ -139,14 +139,14 @@ SHOW_SELECT_GAME
                 DJNZ            .LOOP_ROWS
 
                 LD              DE, MWORK.CAMERA_SCREEN+32*15+9
-                LD              HL, PUSH_SPACE_KEY_TEXT 
+                LD              HL, PUSH_SPACE_KEY_TEXT
                 CALL            MSCREEN.RENDER_TEXT
                 LD              DE, MWORK.CAMERA_SCREEN+32*16+9
                 LD              HL, PUSH_SPACE_KEY_LINE_TEXT
                 CALL            MSCREEN.RENDER_TEXT
                 LD              HL, 0XC000
                 LD              [MWORK.TMP_COUNTER], HL
-    
+
 .LOOP_CHECK_KEY
                 LD              A, [MWORK.TMP_COUNTER]
                 AND             16
@@ -155,7 +155,7 @@ SHOW_SELECT_GAME
                 ;
 ;FLASH_ON_0
                 LD              DE, MWORK.CAMERA_SCREEN+32*15+9
-                LD              HL, PLAY_START_TEXT 
+                LD              HL, PLAY_START_TEXT
                 CALL            MSCREEN.RENDER_TEXT
                 LD              DE, MWORK.CAMERA_SCREEN+32*16+9
                 LD              HL, PLAY_START_LINE_TEXT
@@ -163,7 +163,7 @@ SHOW_SELECT_GAME
                 JP              .RENDER
 .FLASH_OFF_0
                 LD              DE, MWORK.CAMERA_SCREEN+32*15+9
-                LD              HL, BLANK_TEXT 
+                LD              HL, BLANK_TEXT
                 CALL            MSCREEN.RENDER_TEXT
                 LD              DE, MWORK.CAMERA_SCREEN+32*16+9
                 LD              HL, BLANK_TEXT
@@ -188,16 +188,16 @@ SHOW_SELECT_GAME
                 LD              HL, [MWORK.TMP_COUNTER]
                 DEC             HL
                 LD              [MWORK.TMP_COUNTER], HL
-                LD              A, L 
+                LD              A, L
                 CP              0
                 ;JP              Z, SHOW_INTRO
 
                 JP              .LOOP_CHECK_KEY
-    
+
 .SELECT_GAME    CALL            PLAYER_OFF
                /* LD    HL, FX_ZOMBIE_EXPLODE;FX_TAKE
                 LD    [PUNTERO_SONIDO], HL
-                LD    HL,INTERR       
+                LD    HL,INTERR
                 SET   2,[HL] */
                 LD              B, 80
 
@@ -209,7 +209,7 @@ SHOW_SELECT_GAME
                 JP              Z, .FLASH_OFF
 ;FLASH_ON
                 LD              DE, MWORK.CAMERA_SCREEN+32*15+9
-                LD              HL, PLAY_START_TEXT 
+                LD              HL, PLAY_START_TEXT
                 CALL            MSCREEN.RENDER_TEXT
                 LD              DE, MWORK.CAMERA_SCREEN+32*16+9
                 LD              HL, PLAY_START_LINE_TEXT
@@ -217,7 +217,7 @@ SHOW_SELECT_GAME
                 JP              .CONTINUE_SELECT_GAME
 .FLASH_OFF
                 LD              DE, MWORK.CAMERA_SCREEN+32*15+9
-                LD              HL, BLANK_TEXT 
+                LD              HL, BLANK_TEXT
                 CALL            MSCREEN.RENDER_TEXT
                 LD              DE, MWORK.CAMERA_SCREEN+32*16+9
                 LD              HL, BLANK_TEXT
@@ -242,7 +242,7 @@ PUSH_SPACE_KEY_LINE_TEXT
 PLAY_START_TEXT
                 DB    16, 0, 0, 50, 13, 9, 2, 18, 1, 15, 16, 2, 85, 16, 52, 0, 0
 PLAY_START_LINE_TEXT
-                DB    16, 0, 0, 0, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 0, 0, 0    
+                DB    16, 0, 0, 0, 49, 49, 49, 49, 49, 49, 49, 49, 49, 49, 0, 0, 0
 BLANK_TEXT
                 DB    16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 
@@ -256,7 +256,7 @@ COOL_CLEAR_SCREEN
 .LOOP_ROW
                 HALT
                 PUSH            BC
-                PUSH            HL    
+                PUSH            HL
                 LD              B, 23
 .LOOP_COL
                 PUSH            BC
@@ -304,7 +304,7 @@ INIT_GAME
     LD    HL, MWORK.THE_MAP
     LD    [MWORK.CAMERA_OFFSET], HL
 
-    LD    HL, MDATA.SPRITE_EXPLOSION_F1   
+    LD    HL, MDATA.SPRITE_EXPLOSION_F1
     LD    DE, SPRTBL+128
     LD    BC, 32*4+32
     CALL  LDIRVM
@@ -345,7 +345,7 @@ RESET_SPRITES
                                 LD      [MWORK.SPRITES_TABLE_7], A
                                 CALL    MSUPPORT.INIT_SPRITES_SIZE
                                 RET
-    
+
 ;============================================
 ;::INIT_LEVEL
 ;============================================
@@ -563,7 +563,7 @@ INIT_LEVEL_CONTINUE_2           LD      [MWORK.PLAYER_LIVES], A
  ;                               CP      32
   ;                              JP      C, .TWOSURVIVORS
 
-.THREESURVIVORS                 LD      A, 3    
+.THREESURVIVORS                 LD      A, 3
                                 JR      .ASSIGNSURVIVORS
 
 ;.TWOSURVIVORS                   LD      A, 2
@@ -575,7 +575,7 @@ INIT_LEVEL_CONTINUE_2           LD      [MWORK.PLAYER_LIVES], A
 ;::CHECK_BLUE_HOUSES
 ;============================================
 CHECK_BLUE_HOUSES
-                                LD      A, [MWORK.LEVEL]   
+                                LD      A, [MWORK.LEVEL]
                                 AND     8
                                 CP      8
                                 RET     NZ
@@ -998,7 +998,7 @@ SHOW_LEVEL_ANIMATION
 .CONTINUE               PUSH    AF
                         CALL    SET_LEVEL_SONG
                         LD      A, [MWORK.CURRENT_SONG]
-                        CALL    CARGA_CANCION 
+                        CALL    CARGA_CANCION
                         LD      DE, MWORK.CAMERA_SCREEN+32*12+10
                         LD      HL, PRESS_KEY_TILES_OFF
                         LD      BC, 13
@@ -1350,10 +1350,10 @@ SHOW_BONUS_ANIMATION
     CP    7
     JR    NZ, .LOOPCONTINUE
 
-    LD    HL, FX_TAKE 
+    LD    HL, FX_TAKE
     LD    [PUNTERO_SONIDO], HL
-    LD    HL,INTERR       
-    SET   2,[HL] 
+    LD    HL,INTERR
+    SET   2,[HL]
 
 .LOOPCONTINUE
     ;SUBSTRACTS COUNT DOWN
@@ -1532,10 +1532,10 @@ SHOW_HALF_QUEST
 
 
 .TEXT0      DB  _SP, _A, _M, _Y, _AD, _SP, _T, _H, _E, _R, _E, _SP, _A, _R, _E, _SP, _M, _O, _R, _E, _SP, _S, _U, _R, _V, _I, _V, _O, _R, _S, _SP, _SP
-.TEXT1      DB  _SP, _T, _H, _E, _Y, _SP, _A, _R, _E, _SP, _C, _A, _L, _L, _I, _N, _G, _SP, _B, _Y, _SP, _P, _H, _O, _N, _E, _SP, _SP, _SP, _SP, _SP, _SP   
+.TEXT1      DB  _SP, _T, _H, _E, _Y, _SP, _A, _R, _E, _SP, _C, _A, _L, _L, _I, _N, _G, _SP, _B, _Y, _SP, _P, _H, _O, _N, _E, _SP, _SP, _SP, _SP, _SP, _SP
 .TEXT2      DB  _SP, _LI, _SP, _O, _K, _AD, _SP, _I, _SP, _H, _O, _P, _E, _SP, _T, _H, _E, _Y, _SP, _A, _R, _E, _SP, _N, _O, _T, _SP, _SP, _SP, _SP, _SP, _SP
-.TEXT3      DB  _SP, _G, _R, _E, _E, _N, _SP, _N, _O, _R, _SP, _B, _L, _U, _E, _SP, _W, _H, _E, _N, _SP, _I, _SP, _A, _R, _R, _I, _V, _E, _AD, _SP, _SP    
-.TEXT4      DB  _SP, _SP, _SP, _SP, _SP, _C, _O, _N, _T, _I, _N, _U, _E, _SP, _T, _H, _E, _SP, _G, _A, _M, _E, _SP, _W, _I, _T, _H, _SP, _SP, _SP, _SP, _SP    
+.TEXT3      DB  _SP, _G, _R, _E, _E, _N, _SP, _N, _O, _R, _SP, _B, _L, _U, _E, _SP, _W, _H, _E, _N, _SP, _I, _SP, _A, _R, _R, _I, _V, _E, _AD, _SP, _SP
+.TEXT4      DB  _SP, _SP, _SP, _SP, _SP, _C, _O, _N, _T, _I, _N, _U, _E, _SP, _T, _H, _E, _SP, _G, _A, _M, _E, _SP, _W, _I, _T, _H, _SP, _SP, _SP, _SP, _SP
 .TEXT5      DB  _SP, _SP, _SP, _SP, _SP, _SP, _T, _H, _E, _SP, _P, _H, _Y, _S, _I, _C, _A, _L, _SP, _E, _D, _I, _T, _I, _O, _N, _SP, _SP, _SP, _SP, _SP, _SP
 
 
@@ -1543,7 +1543,7 @@ SHOW_HALF_QUEST
 ;::LOAD_HALF_QUEST
 ;==========================================
 LOAD_HALF_QUEST
-    CALL  MSCREEN.CLEAR_SCREEN 
+    CALL  MSCREEN.CLEAR_SCREEN
 
     LD    HL, MDATAP0.HALF_QUEST_PATTERNS_0
     LD    DE, CHRTBL
@@ -1640,10 +1640,10 @@ SHOW_INTERMISSION
     CALL    GET_RANDOM_INTERMISSION_TEXT
     LD      DE, NAMTBL+32*23
     CALL    WRITE_TEXT
-    
+
         CALL        MSUPPORT.WAIT_SECONDS
         CALL        MSUPPORT.WAIT_SECONDS
- 
+
         RET
 
 
@@ -1656,7 +1656,7 @@ LOAD_INTERMISSION
     LD    HL, MDATAP0.INTERMISION_PATTERNS_0
     LD    DE, MWORK.TMP_UNZIP
     CALL  PLETTER.UNPACK
-    CALL    RESTOREBIOS    
+    CALL    RESTOREBIOS
     LD    HL, MWORK.TMP_UNZIP
     LD    DE, CHRTBL
     LD    BC, 32*8*8
@@ -1666,7 +1666,7 @@ LOAD_INTERMISSION
     LD    HL, MDATAP0.INTERMISION_PATTERNS_1
     LD    DE, MWORK.TMP_UNZIP
     CALL  PLETTER.UNPACK
-    CALL    RESTOREBIOS    
+    CALL    RESTOREBIOS
     LD    HL, MWORK.TMP_UNZIP
     LD    DE, CHRTBL+32*8*8
     LD    BC, 32*8*8
@@ -1676,7 +1676,7 @@ LOAD_INTERMISSION
     LD    HL, MDATAP0.INTERMISION_PATTERNS_2
     LD    DE, MWORK.TMP_UNZIP
     CALL  PLETTER.UNPACK
-    CALL    RESTOREBIOS    
+    CALL    RESTOREBIOS
     LD    HL, MWORK.TMP_UNZIP
     LD    DE, CHRTBL+32*8*8*2
     LD    BC, 32*8*8
@@ -1686,7 +1686,7 @@ LOAD_INTERMISSION
     LD    HL, MDATAP0.INTERMISION_COLORS_0
     LD    DE, MWORK.TMP_UNZIP
     CALL  PLETTER.UNPACK
-    CALL    RESTOREBIOS    
+    CALL    RESTOREBIOS
     LD    HL, MWORK.TMP_UNZIP
     LD    DE, CLRTBL
     LD    BC, 32*8*8
@@ -1696,7 +1696,7 @@ LOAD_INTERMISSION
     LD    HL, MDATAP0.INTERMISION_COLORS_1
     LD    DE, MWORK.TMP_UNZIP
     CALL  PLETTER.UNPACK
-    CALL    RESTOREBIOS    
+    CALL    RESTOREBIOS
     LD    HL, MWORK.TMP_UNZIP
     LD    DE, CLRTBL+32*8*8
     LD    BC, 32*8*8
@@ -1706,7 +1706,7 @@ LOAD_INTERMISSION
     LD    HL, MDATAP0.INTERMISION_COLORS_2
     LD    DE, MWORK.TMP_UNZIP
     CALL  PLETTER.UNPACK
-    CALL    RESTOREBIOS    
+    CALL    RESTOREBIOS
     LD    HL, MWORK.TMP_UNZIP
     LD    DE, CLRTBL+32*8*8*2
     LD    BC, 32*8*8
@@ -1722,7 +1722,7 @@ WRITE_TEXT
     LD    BC, 32
     CALL  LDIRVM
 
-    RET 
+    RET
 
 ;=======================================
 ;::GET_RANDOM_INTERMISSION_TEXT
@@ -1754,9 +1754,9 @@ GET_RANDOM_INTERMISSION_TEXT
 
 .TEXT0      DB _SP, _SP, _SP, _I, _AP, _M, _SP, _S, _O, _SP, _H, _O, _T, _SP, _B, _U, _T, _SP, _I, _AP, _M, _SP, _N, _O, _T, _SP, _F, _O, _O, _D, _AD, _SP
 .TEXT1      DB _W, _H, _E, _R, _E, _SP, _A, _R, _E, _SP, _T, _H, _E, _SP, _P, _L, _A, _N, _T, _S, _SP, _T, _O, _SP, _H, _E, _L, _P, _SP, _M, _E, _QU
-.TEXT2      DB _I, _SP, _T, _H, _I, _N, _K, _SP, _I, _SP, _W, _I, _L, _L, _SP, _B, _E, _C, _O, _M, _E, _SP, _V, _E, _G, _E, _T, _A, _R, _I, _A, _N    
-.TEXT3      DB _SP, _P, _L, _E, _A, _S, _E, _SP, _T, _I, _M, _E, _SP, _O, _U, _T, _AD, _SP, _I, _SP, _N, _E, _E, _D, _SP, _A, _SP, _B, _E, _E, _R, _SP    
-.TEXT4      DB _SP, _U, _P, _S, _AD, _SP, _Z, _O, _M, _B, _I, _E, _S, _SP, _A, _T, _E, _SP, _M, _Y, _SP, _N, _E, _I, _G, _H, _B, _O, _U, _R, _S, _SP    
+.TEXT2      DB _I, _SP, _T, _H, _I, _N, _K, _SP, _I, _SP, _W, _I, _L, _L, _SP, _B, _E, _C, _O, _M, _E, _SP, _V, _E, _G, _E, _T, _A, _R, _I, _A, _N
+.TEXT3      DB _SP, _P, _L, _E, _A, _S, _E, _SP, _T, _I, _M, _E, _SP, _O, _U, _T, _AD, _SP, _I, _SP, _N, _E, _E, _D, _SP, _A, _SP, _B, _E, _E, _R, _SP
+.TEXT4      DB _SP, _U, _P, _S, _AD, _SP, _Z, _O, _M, _B, _I, _E, _S, _SP, _A, _T, _E, _SP, _M, _Y, _SP, _N, _E, _I, _G, _H, _B, _O, _U, _R, _S, _SP
 .TEXT5      DB _SP, _SP, _SP, _SP, _SP, _SP, _SP, _SP, _SP, _SP, _I, _SP, _A, _M, _SP, _L, _E, _G, _E, _N, _D, _AD, _SP, _SP, _SP, _SP, _SP, _SP, _SP, _SP, _SP, _SP
 
 ;==========================================
@@ -1823,14 +1823,14 @@ SHOW_GOOD_ENDING
     CALL    WRITE_TEXT
     CALL    MSUPPORT.WAIT_SECONDS
     CALL    MSUPPORT.WAIT_SECONDS
-    
+
 
     LD      HL, .TEXT2
     LD      DE, NAMTBL+32*5
     CALL    WRITE_TEXT
     CALL    MSUPPORT.WAIT_SECONDS
     CALL    MSUPPORT.WAIT_SECONDS
-    
+
 
     LD      HL, .TEXT3
     LD      DE, NAMTBL+32*7
@@ -1857,7 +1857,7 @@ SHOW_GOOD_ENDING
     JP      MAIN_INTRO
 */
 .TEXT0      DB  _SP, _Y, _O, _U, _SP, _H, _A, _V, _E, _SP, _S, _A, _V, _E, _D, _SP, _M, _A, _N, _Y, _SP, _P, _E, _O, _P, _L, _E, _SP, _SP, _SP, _SP, _SP
-.TEXT1      DB  _SP, _I, _N, _SP, _T, _I, _M, _E, _AD, _SP, _S, _O, _M, _E, _SP, _O, _F, _SP, _T, _H, _E, _M, _SP, _S, _C, _I, _E, _N, _T, _I, _S, _T    
+.TEXT1      DB  _SP, _I, _N, _SP, _T, _I, _M, _E, _AD, _SP, _S, _O, _M, _E, _SP, _O, _F, _SP, _T, _H, _E, _M, _SP, _S, _C, _I, _E, _N, _T, _I, _S, _T
 .TEXT2      DB  _SP, _W, _H, _O, _SP, _H, _A, _V, _E, _SP, _B, _E, _E, _N, _SP, _A, _B, _L, _E, _SP, _T, _O, _SP, _C, _O, _N, _T, _A, _I, _N, _SP, _SP
 .TEXT3      DB  _SP, _T, _H, _E, _SP, _E, _P, _I, _D, _E, _M, _I, _C, _SP, _LI, _W, _E, _L, _L, _SP, _D, _O, _N, _E, _SP, _A, _M, _Y, _AD, _SP, _SP, _SP
 
@@ -1866,7 +1866,7 @@ SHOW_GOOD_ENDING
 ;==========================================
 LOAD_GOOD_ENDING
     CALL  MSCREEN.CLEAR_SCREEN
-    
+
     LD    BC, 32*8*8            ;RESET BUFFER OF BANK0
     LD    DE, MWORK.TMP_UNZIP
     CALL  MSUPPORT.RESET_BIG_RAM
@@ -1911,7 +1911,7 @@ LOAD_GOOD_ENDING
     LD    HL, MDATAP0.GOOD_ENDING_COLORS_2
     LD    DE, CLRTBL+32*8*8*2
     CALL  LOAD_BANK
-    
+
 
     RET
 
@@ -2007,7 +2007,7 @@ SHOW_BAD_ENDING
 ;==========================================
 LOAD_BAD_ENDING
     CALL  MSCREEN.CLEAR_SCREEN
-    
+
     LD    BC, 32*8*8            ;RESET BUFFER OF BANK0
     LD    DE, MWORK.TMP_UNZIP
     CALL  MSUPPORT.RESET_BIG_RAM
@@ -2024,9 +2024,9 @@ LOAD_BAD_ENDING
     CALL  LDIRVM
 
     LD    HL, MDATAP0.COMMON_ENDING_PATTERNS_1
-    LD    DE, CHRTBL+32*8*8 
+    LD    DE, CHRTBL+32*8*8
     CALL  LOAD_BANK
-  
+
     LD    HL, MDATAP0.BAD_ENDING_PATTERNS_2
     LD    DE, CHRTBL+32*8*8*2
     CALL  LOAD_BANK
@@ -2060,8 +2060,8 @@ LOAD_BAD_ENDING
 ;========================================
 SHOW_ENDING_STAFF
                         CALL    DISSCR
-                        CALL    MSCREEN.CLEAR_SCREEN   
-                        CALL    LOAD_STAFF_TILES 
+                        CALL    MSCREEN.CLEAR_SCREEN
+                        CALL    LOAD_STAFF_TILES
                         CALL    ENASCR
 
                         LD      HL, MWORK.TMP_UNZIP+32
@@ -2106,7 +2106,7 @@ SHOW_ENDING_STAFF
                 DB  1, 0, 1, 0, 0, 0 ;ARDUDBOY
                 DB  1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0 ;PIXEL ART
                 DB  1, 0, 1, 0, 0, 0     ; MUSIC
-                DB  1, 0, 1 ; PENTACOUR 
+                DB  1, 0, 1 ; PENTACOUR
                 DB  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
                 DB  0, 0, 0, MWORK.K_EOF
 
@@ -2119,7 +2119,7 @@ LOAD_STAFF_TILES
                         LD      HL, MDATAP0.STAFF_PATTERNS
                         LD      DE, MWORK.TMP_UNZIP
                         CALL    PLETTER.UNPACK
-                        CALL    RESTOREBIOS    
+                        CALL    RESTOREBIOS
                         LD      HL, MWORK.TMP_UNZIP
                         LD      DE, CHRTBL
                         LD      BC, 32*8*8
@@ -2139,7 +2139,7 @@ LOAD_STAFF_TILES
                         LD      HL, MDATAP0.STAFF_COLORS
                         LD      DE, MWORK.TMP_UNZIP
                         CALL    PLETTER.UNPACK
-                        CALL    RESTOREBIOS    
+                        CALL    RESTOREBIOS
                         LD      HL, MWORK.TMP_UNZIP
                         LD      DE, CLRTBL
                         LD      BC, 32*8*8
@@ -2154,14 +2154,14 @@ LOAD_STAFF_TILES
                         LD      DE, CLRTBL+32*8*8*2
                         LD      BC, 32*8*8
                         CALL    LDIRVM
- 
-                        
-                        
+
+
+
                         CALL    SETGAMEPAGE0
                         LD      HL, MDATAP0.STAFF_TILES
                         LD      DE, MWORK.TMP_UNZIP
                         CALL    PLETTER.UNPACK
-                        CALL    RESTOREBIOS  
+                        CALL    RESTOREBIOS
                         EI
                         RET
 
@@ -2200,8 +2200,8 @@ TRATE_PAUSE
 
     LD    HL, FX_TAKE ;//TODO Mejorar
     LD    [PUNTERO_SONIDO], HL
-    LD    HL,INTERR       
-    SET   2,[HL] 
+    LD    HL,INTERR
+    SET   2,[HL]
 
 .WaitLoop
     HALT
@@ -2216,8 +2216,8 @@ TRATE_PAUSE
 
     LD    HL, FX_TAKE ;//TODO Mejorar
     LD    [PUNTERO_SONIDO], HL
-    LD    HL,INTERR       
-    SET   2,[HL] 
+    LD    HL,INTERR
+    SET   2,[HL]
 
     LD      B, 30
 .WaitLoop2
@@ -2244,7 +2244,7 @@ TRATE_PAUSE
 ;========================================
 ;::SHOW_GAME_OVER
 ;========================================
-SHOW_GAME_OVER  
+SHOW_GAME_OVER
                                 CALL    PLAYER_OFF
                                 CALL    MSCREEN.CLEAR_SCREEN
                                 LD      HL, MDATA.TITLES_PATTERNS
@@ -2291,6 +2291,10 @@ SHOW_GAME_OVER
                                 LD      [MWORK.NUM_OF_CONTINUES], A
 .CONTINUE                       LD      A, MWORK.K_INITIAL_PLAYER_LIVES
                                 LD      [MWORK.PLAYER_LIVES], A
+                                XOR     A
+                                LD      [MWORK.PLAYER_POINTS], A
+                                LD      [MWORK.PLAYER_POINTS+1], A
+                                LD      [MWORK.PLAYER_POINTS+2], A
                                 JP      MAIN_INIT_LEVEL
 
 
@@ -2322,8 +2326,8 @@ _X EQU 248
 _Y EQU 249
 _Z EQU 250
 _AD EQU 251
-_QU EQU 252    
+_QU EQU 252
 _LI EQU 253
-_AP EQU 254    
+_AP EQU 254
 
  ENDMODULE
